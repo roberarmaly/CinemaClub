@@ -1,4 +1,4 @@
-function MovieCard({ title, year, rating,popular,available }) {
+function MovieCard({ title, year, rating,popular,available,duration }) {
   return (
     <article className="movie-card" >
       <h2>{title}</h2>
@@ -6,9 +6,10 @@ function MovieCard({ title, year, rating,popular,available }) {
       <p>דירוג: {rating}</p>
       {popular &&<p>בחירת הצוות</p>}
       {available &&<p>זמין לצפייה</p>}
-
+     {typeof duration === "number" && (
+  <p>זמן: {duration} דקות</p>
+)}
     </article>
   );
 }
-
 export default MovieCard;
